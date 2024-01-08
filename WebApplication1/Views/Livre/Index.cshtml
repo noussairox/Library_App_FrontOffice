@@ -1,0 +1,38 @@
+﻿@model List<WebApplication1.Models.Livre>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Liste des Livres</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="min-h-screen w-full flex items-center justify-center bg-green-500">
+    <div class="bg-white p-8 rounded shadow-md lg:w-70%">
+        <h2 class="text-2xl font-semibold mb-6 text-center text-green-500">Liste des Livres</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            @foreach (var livre in Model)
+            {
+                <div class="bg-white rounded-lg shadow m-2 p-2">
+                    <img src="data:image;base64,@Convert.ToBase64String(livre.Image)" alt="Image Livre" class="h-48 w-full object-contain" />
+
+                    <div class="flex flex-col justify-between h-full mt-2">
+                        <div>
+                            <div class="font-bold">@livre.Titre</div>
+                            <div>@livre.Auteur</div>
+                            <div class="text-xs mb-2">@livre.DatePublication</div>
+                            <div class="text-red-900 text-xs font-bold pl-1 pr-5 pb-3 bg-green-300 h-5 w-5 rounded-2xl">@livre.QuantiteDisponible</div>
+
+                            <button type="button" onclick="window.location.href='@Url.Action("Details", "Livre", new { id = livre.Id })'" class="flex items-center justify-center mt-4 p-2 bg-green-500 hover:bg-yellow-300 text-white rounded-full w-full text-gray-800 transition-all duration-300">
+                                Réserver
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

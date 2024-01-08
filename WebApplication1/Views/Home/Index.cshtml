@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<!-- En-tête -->
+<h1 class="text-3xl font-bold text-green-600 text-center mb-4">Bienvenue à la Bibliothèque</h1>
+<p class="text-lg text-center mb-8">Découvrez notre collection de livres et profitez d'une expérience de lecture exceptionnelle.</p>
+
+<!-- Image principale -->
+<div class="flex justify-center">
+    <div class="object-fill h-48 w-96 mx-auto">
+        <img src="~/images/book2.jpg" alt="Slide 1" class="w-full h-auto rounded-md">
+    </div>
+</div>
+<!-- Boutons pour s'inscrire et réserver -->
+<div class="flex justify-center mt-32">
+    <a href="@Url.Action("InscriptionAdherent", "Registration")" class="bg-green-600 text-white py-2 px-4 rounded-md mr-4">Inscrire un Adhérant</a>
+    <a href="@Url.Action("Index","Livre")" class="bg-green-600 text-white py-2 px-4 rounded-md">Réserver un livre</a>
+</div>
+
+<!-- Section Cartes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-8">
+
+    <!-- Carte Nouveautés -->
+    <div class="bg-white p-4 rounded-md shadow-md">
+        <h2 class="text-xl font-semibold mb-2 text-green-600">Nouveautés</h2>
+        <img src="~/images/book1.jpg" alt="Nouveautés" class="mb-4 rounded-md">
+        <p>Explorez les dernières additions à notre collection.</p>
+        <a href="#" class="text-green-600 font-semibold mt-2 inline-block">Voir plus</a>
+    </div>
+
+    <!-- Carte Meilleures ventes -->
+    <div class="bg-white p-4 rounded-md shadow-md">
+        <h2 class="text-xl font-semibold mb-2 text-green-600">Meilleures ventes</h2>
+        <img src="~/images/book4.jpg" alt="Meilleures ventes" class="mb-4 rounded-md">
+        <p>Découvrez les livres les plus populaires du moment.</p>
+        <a href="#" class="text-green-600 font-semibold mt-2 inline-block">Voir plus</a>
+    </div>
+
+    <!-- Carte Promotions -->
+    <div class="bg-white p-4 rounded-md shadow-md">
+        <h2 class="text-xl font-semibold mb-2 text-green-600">Promotions</h2>
+        <img src="~/images/book3.jpg" alt="Promotions" class="mb-4 rounded-md">
+        <p>Économisez sur une sélection de livres.</p>
+        <a href="#" class="text-green-600 font-semibold mt-2 inline-block">Voir plus</a>
+    </div>
+
+</div>
+
